@@ -193,7 +193,7 @@ Stream<int> moveFiles(
       yield ++i;
 
       if (albumBehavior == 'json') {
-        infoJson[p.basename(result.path)] =
+        infoJson[p.relative(result.path, from: output.path)] =
             m.files.keys.whereNotNull().toList();
       }
     }
